@@ -1,21 +1,19 @@
-//your JS code here. If required.
 function secondHighest(arr) {
-	if(!Array.isArray(arr)||arr.length<2){
-		return -Infinity;
-	}
-	
-	let max=-Infinity;
-	let secmax=-Infinity;
+  if (!Array.isArray(arr) || arr.length < 2) return -Infinity;
 
-	for(let nums of arr){
-		if(num>max){
-			secmax=max;
-			max=num;
-		}else if(num<max && num>secmax){
-			secmax=num;
-		}
-	}
-	  return secmax === -Infinity ? -Infinity : secmax;
-}
-	
+  let nums = arr.map(Number);
+
+  let max = -Infinity;
+  let second = -Infinity;
+
+  for (let num of nums) {
+    if (num > max) {
+      second = max;
+      max = num;
+    } else if (num < max && num > second) {
+      second = num;
+    }
+  }
+
+  return second === -Infinity ? -Infinity : second;
 }
